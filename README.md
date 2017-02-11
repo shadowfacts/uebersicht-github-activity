@@ -20,7 +20,7 @@
 
 Installation:
 
-1. Download [the zip](https://github.com/mtscout6/uebersicht-github-activity/blob/master/github-activity.widget.zip)
+1. Download [the zip](https://github.com/shadowfacts/uebersicht-github-activity/blob/master/github-activity.widget.zip)
 
 2. Unzip it
 
