@@ -49,5 +49,5 @@ Installation:
 ## Other Notes
 
 - The shell script (`run.sh`) is used to find the location of Node and run the script. Currently, the script only special cases for Node installed via Homebrew and falls back on running node through the shell's normal behavior. The environment the shells script is executed in does not have `.bash_profile`/`.bashrc`/`.zshrc`/anything else loaded. If you have node installed in an unusual location, open an issue and, if it's common enough, I'll add another special case.
-- You'll need to change the `size`, `incrAmount`, and possibly `margin` values in the options to fit your screen size. The defaults are sized for the largest that can fit on a 1440p screen. A rule of thumb for size/margin is `screenWidth / 54 >= size + margin`
+- You'll need to change the `size`, `incrAmount`, and possibly `margin` values in the options to fit your screen size. The defaults are sized for the largest that can fit on a 1440p screen. A rule of thumb for size/margin is `screenWidth / 53 >= size + margin`
 - You may need to modify the values used by the `else if` conditions in the `getColorsForPalette` function, depending on your GitHub contributions. GitHub determines which color "level" to use dynamically, based on your average contributions but this widget does not.

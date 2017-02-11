@@ -40,7 +40,7 @@ axios.get(`https://github.com/${options.user}`)
 	.catch(console.error);
 
 function generate(res) {
-	console.log(`<svg id="github-activity" width="${54 * options.size}" height="${7 * (options.size)}">`);
+	console.log(`<svg id="github-activity" width="${53 * options.size}" height="${7 * (options.size)}">`);
 
 	const $ = cheerio.load(res.data);
 
