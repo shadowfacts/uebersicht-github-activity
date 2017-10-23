@@ -9,7 +9,7 @@ style: "\
 }",
 render: () => {
 	try {
-       	    return "<style>#github-activity-widget-index-js { width: 100%; height: 100%; }</style>";
+	    return "<style>#github-activity-widget-index-js { width: 100%; height: 100%; }</style>";
 	}
 	catch (err) {
 	    console.log(err);
