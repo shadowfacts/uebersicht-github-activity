@@ -37,9 +37,7 @@ const cheerio = require("cheerio");
 
 axios.get(`https://github.com/${options.user}`)
 	.then(generate)
-	.catch(function (err) {
-		return
-	});
+	.catch(() => {});
 
 function generate(res) {
 	console.log(`<svg id="github-activity" width="${53 * options.size}" height="${7 * (options.size)}">`);
