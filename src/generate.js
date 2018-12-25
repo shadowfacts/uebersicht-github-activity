@@ -1,12 +1,12 @@
 // For documentation on these options, see the README at https://github.com/shadowfacts/uebersicht-github-activity/
 const options = {
-	user: "shadowfacts",
-	size: 44,
-	incrAmount: 6,
+	user: "serkakres",
+	size: 26,
+	incrAmount: 4,
 	margin: 2,
 	vary: ["size", "color"],
 	shape: "circle",
-	theme: "red",
+	theme: "blue",
 	colors: {
 		overrides: {
 			none: [null, null],
@@ -29,6 +29,13 @@ const options = {
 			three: ["#44a340", "#8cc665"],
 			max: ["#1e6823", "#44a340"]
 		},
+		greenish: {
+			none: ["#", "#"],
+			one: ["#d6e685", "#"],
+			two: ["#8cc665", "#"],
+			three: ["#44a340", "#"],
+			max: ["#1e6823", "#"]
+		},
 		white: {
 			none: ["#000", "#000"],
 			one: ["#444", "#222"],
@@ -37,7 +44,7 @@ const options = {
 			max: ["#eee", "#aaa"]
 		},
 		blue: {
-			none: ["#111", "#111"],
+			none: ["#", "#"],
 			one: ["#0723b2", "#041469"],
 			two: ["#0244b2", "#0723b2"],
 			three: ["#006ec9", "#0244b2"],
