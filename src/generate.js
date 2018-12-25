@@ -1,12 +1,12 @@
 // For documentation on these options, see the README at https://github.com/shadowfacts/uebersicht-github-activity/
 const options = {
-	user: "shadowfacts",
-	size: 44,
-	incrAmount: 6,
+	user: "serkakres",
+	size: 26,
+	incrAmount: 4,
 	margin: 2,
 	vary: ["size", "color"],
 	shape: "circle",
-	theme: "red",
+	theme: "blue",
 	colors: {
 		overrides: {
 			none: [null, null],
@@ -28,18 +28,51 @@ const options = {
 			two: ["#8cc665", "#d6e685"],
 			three: ["#44a340", "#8cc665"],
 			max: ["#1e6823", "#44a340"]
+		},
+		greenish: {
+			none: ["#", "#"],
+			one: ["#d6e685", "#"],
+			two: ["#8cc665", "#"],
+			three: ["#44a340", "#"],
+			max: ["#1e6823", "#"]
+		},
+		white: {
+			none: ["#000", "#000"],
+			one: ["#444", "#222"],
+			two: ["#777", "#444"],
+			three: ["#aaa", "#777"],
+			max: ["#eee", "#aaa"]
+		},
+		blue: {
+			none: ["#", "#"],
+			one: ["#0723b2", "#041469"],
+			two: ["#0244b2", "#0723b2"],
+			three: ["#006ec9", "#0244b2"],
+			max: ["#4baffc", "#006ec9"]
 		}
 	}
 };
 
 const axios = require("axios");
 const cheerio = require("cheerio");
+const fs = require('fs');
 
 axios.get(`https://github.com/${options.user}`)
 	.then(generate)
-	.catch(() => {});
+	.catch(() => {
+		generate(null)
+	});
 
 function generate(res) {
+	if(res !== null){
+		let data = JSON.stringify(res.data);
+		fs.writeFileSync('github-activity.json', data);
+	}
+	else {
+		let rawdata = fs.readFileSync('github-activity.json');
+		res = {'data': JSON.parse(rawdata)};
+	}
+
 	console.log(`<svg id="github-activity" width="${53 * options.size}" height="${7 * (options.size)}">`);
 
 	const $ = cheerio.load(res.data);
