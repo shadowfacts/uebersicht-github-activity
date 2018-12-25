@@ -34,12 +34,24 @@ const options = {
 
 const axios = require("axios");
 const cheerio = require("cheerio");
+const fs = require('fs');
 
 axios.get(`https://github.com/${options.user}`)
 	.then(generate)
-	.catch(() => {});
+	.catch(() => {
+		generate(null)
+	});
 
 function generate(res) {
+	if(res !== null){
+		let data = JSON.stringify(res.data);
+		fs.writeFileSync('github-activity.json', data);
+	}
+	else {
+		let rawdata = fs.readFileSync('github-activity.json');
+		res = {'data': JSON.parse(rawdata)};
+	}
+
 	console.log(`<svg id="github-activity" width="${53 * options.size}" height="${7 * (options.size)}">`);
 
 	const $ = cheerio.load(res.data);
