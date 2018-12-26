@@ -1,12 +1,12 @@
 // For documentation on these options, see the README at https://github.com/shadowfacts/uebersicht-github-activity/
 const options = {
-	user: "shadowfacts",
-	size: 44,
-	incrAmount: 6,
+	user: "serkakres",
+	size: 26,
+	incrAmount: 4,
 	margin: 2,
 	vary: ["size", "color"],
 	shape: "circle",
-	theme: "red",
+	theme: "blue",
 	colors: {
 		overrides: {
 			none: [null, null],
